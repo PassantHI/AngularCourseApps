@@ -1,0 +1,20 @@
+<div id="container">
+  <div id="tickets" >
+    <ul >
+      @for(t of tickets ;track t.id){
+       <li>
+        <app-ticket [data]="t" (close)="onCloseTicket(t.id)"/>
+       </li> 
+  
+      }
+      @empty{
+        <p>ticket empty</p>
+      }
+    </ul>
+  </div>
+  <div id="new-ticket">
+        <app-new-ticket (add)="onAdd($event)"/>
+  </div>
+  
+
+</div>
